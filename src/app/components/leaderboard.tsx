@@ -166,8 +166,16 @@ export async function Leaderboard({ batches, graduatesOnly = false, builders }: 
                     scope="col"
                     className="py-3 border-t-2 border-b-2 border-dashed text-left text-lg font-semibold"
                   >
-                    <span className={`${tableCellStyles} border-r-2`}>
+                    <span className={tableCellStyles}>
                       Points
+                    </span>
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-3 border-t-2 border-b-2 border-dashed text-left text-lg font-semibold"
+                  >
+                    <span className={`${tableCellStyles} border-r-2`}>
+                      Total Gas Used
                     </span>
                   </th>
                 </tr>
@@ -201,8 +209,13 @@ export async function Leaderboard({ batches, graduatesOnly = false, builders }: 
                         </td>
                       )}
                       <td className="py-2 whitespace-nowrap text-lg">
-                        <span className={`${tableCellStyles} border-r-2`}>
+                        <span className={tableCellStyles}>
                           {leaderboardData.points}
+                        </span>
+                      </td>
+                      <td className="py-2 whitespace-nowrap text-lg">
+                        <span className={`${tableCellStyles} border-r-2`}>
+                          {leaderboardData.totalGasUsed.toLocaleString()}
                         </span>
                       </td>
                     </tr>
